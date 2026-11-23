@@ -6,14 +6,15 @@ Source-backed question answering for KOTOR modding and troubleshooting: answers 
 
 - Discord bot and HTTP API
 - Retrieval, source policy and answer composition packages
-- Indexer (Python) and ingest worker
+- Retrieval index built from the HoloVec corpus
 - Cloudflare Workers for the public API, retrieval and scheduled reindexing
 - Web UI
 
 ## Contracts
 
 - Sign-in: client of the org-wide OpenID Connect service. No login code lives here.
-- Discord plumbing: `kolto-bot-kit`.
+- Corpus: [`holovec`](https://github.com/kolto-labs/holovec) owns acquiring and archiving the sources. Trask reads that corpus and does not crawl or ingest the same sources itself.
+- Discord plumbing: `cantina` (packages `@kolto-labs/cantina-*`).
 
 ## Status
 
